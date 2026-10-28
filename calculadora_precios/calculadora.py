@@ -34,6 +34,7 @@ def aplicar_descuento(precio, descuento):
     :rtype: float
     :raises ValueError: Si el precio es negativo o el descuento
         no está entre 0 y 100.
+    Prueba para el actions
     """
     if precio < 0:
         raise ValueError("El precio no puede ser negativo")
