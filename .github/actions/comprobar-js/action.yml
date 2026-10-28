@@ -1,0 +1,5 @@
+name: Comprobar documentación (JavaScript)
+description: Comprueba que existen README.md, LICENSE y CONTRIBUTING.md
+runs:
+  using: node20
+  main: index.js
