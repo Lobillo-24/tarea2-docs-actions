@@ -1,0 +1,21 @@
+name: Comprobar documentación (compuesta)
+description: Comprueba que existen README.md, LICENSE y CONTRIBUTING.md
+runs:
+  using: composite
+  steps:
+    - name: Comprobar archivos
+      shell: bash
+      run: |
+        faltan=0
+        for f in README.md LICENSE CONTRIBUTING.md; do
+          if [ -f "$f" ]; then
+            echo "OK: $f existe"
+          else
+            echo "FALTA: $f"
+            faltan=1
+          fi
+        done
+        if [ "$faltan" -eq 1 ]; then
+          echo "::error::Falta documentación"
+          exit 1
+        fi
